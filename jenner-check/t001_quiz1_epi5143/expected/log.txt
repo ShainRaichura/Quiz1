@@ -1,0 +1,97 @@
+1          options obs=100; /* cap input rows for the captured run */
+NOTE: Option OBS changed to 100.
+2          /* sample data standing in for the course dataset Quiz1_data */
+3          libname Quiz1 '.';
+NOTE: Library QUIZ1 assigned path=..
+4          data Quiz1.quiz1_data;
+5              input ID X1 X2 X3 diabetes Consult_dt :date9. Surgery_dt :date9.;
+6              format Consult_dt Surgery_dt date9.;
+7              datalines;
+18         ;
+19         run;
+NOTE: DATA QUIZ1.QUIZ1_DATA
+
+NOTE: Processing inline DATALINES (10 lines)
+
+NOTE: The data set QUIZ1.QUIZ1_DATA has 10 observations and 7 variables.
+NOTE: DATA elapsed:
+  wall  0.00 seconds
+  cpu   0.00 seconds
+20
+21         LIBNAME Quiz1 '.';
+NOTE: Library QUIZ1 assigned path=..
+22         /*Q2*/
+23         data Quiz1.quiz1;
+24             set Quiz1.Quiz1_data;
+25         run;
+NOTE: DATA QUIZ1.QUIZ1
+
+
+NOTE: There were 10 observations read from the data set QUIZ1.QUIZ1_DATA.
+NOTE: The data set QUIZ1.QUIZ1 has 10 observations and 7 variables.
+NOTE: DATA elapsed:
+  wall  0.00 seconds
+  cpu   0.00 seconds
+26
+27         /*Q3*/
+28         proc contents data=Quiz1.quiz1_data;
+29         run;
+NOTE: PROC CONTENTS data=QUIZ1.QUIZ1_DATA
+
+30
+31         /*Q4*/
+32         proc freq data=Quiz1.quiz1_data;
+33             table diabetes;
+34         run;
+NOTE: PROC FREQ
+NOTE: PROC FREQ statement used.
+35
+36         /*Q6+Q7+Q8*/
+37         data work.quiz1;
+38         	set Quiz1.quiz1_data;
+39         	sum_V1=X1+X2+X3;
+40         	sum_V2=sum(X1,X2,X3);
+41         	wait_time=Surgery_dt-Consult_dt;
+42         run;
+NOTE: DATA WORK.QUIZ1
+
+
+NOTE: There were 10 observations read from the data set QUIZ1.QUIZ1_DATA.
+NOTE: The data set WORK.QUIZ1 has 10 observations and 10 variables.
+NOTE: DATA elapsed:
+  wall  0.00 seconds
+  cpu   0.00 seconds
+43
+44         /*Q9*/
+45
+46         data work.quiz1;
+47         	set work.quiz1;
+48         	X2_high=0;
+49         	if X2>=11.97 then X2_high=1;
+50         run;
+NOTE: DATA WORK.QUIZ1
+
+
+NOTE: There were 10 observations read from the data set WORK.QUIZ1.
+NOTE: The data set WORK.QUIZ1 has 10 observations and 11 variables.
+NOTE: DATA elapsed:
+  wall  0.00 seconds
+  cpu   0.00 seconds
+51
+52         /*Q10*/
+53
+54         proc univariate data=work.quiz1;
+55         	variables wait_time;
+56         	run;
+NOTE: PROC UNIVARIATE
+57
+58         proc freq data=work.quiz1;
+59         	tables X2_high*diabetes;
+60         run;
+NOTE: PROC FREQ
+NOTE: PROC FREQ statement used.
+61
+62         proc contents data=work.quiz1;
+63         run;
+NOTE: PROC CONTENTS data=WORK.QUIZ1
+

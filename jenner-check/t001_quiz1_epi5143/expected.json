@@ -1,0 +1,18 @@
+{
+  "_captured_at": "2026-11-27T16:55:15.904765Z",
+  "_captured_run_id": "r_992890bc5f5a4823800a740e205855cf",
+  "status": "ok",
+  "exit_code": 0,
+  "log_contains": [
+    "NOTE: The data set WORK.QUIZ1 has 10 observations and 10 variables.",
+    "NOTE: The data set WORK.QUIZ1 has 10 observations and 11 variables."
+  ],
+  "log_does_not_contain": [
+    "ERROR:",
+    "[JENNER-ERROR"
+  ],
+  "diagnostics": {
+    "parse_warnings": [],
+    "runtime_warnings": []
+  }
+}

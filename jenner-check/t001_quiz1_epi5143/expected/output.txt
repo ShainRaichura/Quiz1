@@ -1,0 +1,173 @@
+                                                   The Jenner System               16:55 Friday, November 27, 2026     1
+
+                                                 The CONTENTS Procedure
+
+                          Data Set Name        QUIZ1.QUIZ1_DATA       Observations          10
+                          Member Type          DATA                   Variables             7
+                          Engine               PARQUET                Indexes               0
+                          Created              11/27/2026 16:55:07    Deleted Observations  0
+                          Last Modified        11/27/2026 16:55:07    Compressed            NO
+                          Protection                                  Sorted                NO
+                          Data Set Type
+                          Label
+                          Encoding             utf-8  Unicode (UTF-8)
+
+
+                                           Engine/Host Dependent Information
+
+                                       Filename           ././quiz1_data.parquet
+                                       Inode Number       2682929
+                                       Access Permission  rw-r--r--
+                                       File Size (bytes)  4913
+
+
+                                      Alphabetic List of Variables and Attributes
+
+                                        #    Variable      Type    Len    Format
+
+                                        6    Consult_dt    Num       8    DATE9.
+                                        5    diabetes      Num       8
+                                        1    ID            Num       8
+                                        7    Surgery_dt    Num       8    DATE9.
+                                        2    X1            Num       8
+                                        3    X2            Num       8
+                                        4    X3            Num       8
+
+
+                                                   The Jenner System               16:55 Friday, November 27, 2026     2
+
+                                                   The FREQ Procedure
+
+                                                                 Cumulative    Cumulative
+                           diabetes    Frequency    Percent     Frequency      Percent
+                           -----------------------------------------------------------------
+                           0                   6     60.00            6        60.00
+                           1                   4     40.00           10       100.00
+
+                                                   The Jenner System               16:55 Friday, November 27, 2026     3
+
+                                                The UNIVARIATE Procedure
+                                                  Variable:  wait_time
+
+                                                        Moments
+
+                            N                          10    Sum Weights                 10
+                            Mean                     32.9    Sum Observations           329
+                            Std Deviation      17.5401128    Variance            307.655556
+                            Skewness           1.05369472    Kurtosis            -0.2202693
+                            Uncorrected SS          13593    Corrected SS            2768.9
+                            Coeff Variation    53.3134126    Std Error Mean      5.54667067
+
+
+                                               Basic Statistical Measures
+ 
+                                     Location                    Variability
+
+                                 Mean     32.90000     Std Deviation           17.54011
+                                 Median   25.00000     Variance               307.65556
+                                 Mode     18.00000     Range                   48.00000
+                                                       Interquartile Range     23.00000
+
+
+                                               Tests for Location: Mu0=0
+ 
+                                    Test           -Statistic-    -----p Value------
+
+                                    Student's t    t  5.931486    Pr > |t|    0.0002
+                                    Sign           M         5    Pr >= |M|   0.0020
+                                    Signed Rank    S      27.5    Pr >= |S|   0.0020
+
+                                                Quantiles (Definition 5)
+
+                                                Level       Quantile
+                                                ----------  --------
+                                                100% Max        65.0
+                                                99%             65.0
+                                                95%             65.0
+                                                90%             62.5
+                                                75% Q3          41.0
+                                                50% Median      25.0
+                                                25% Q1          18.0
+                                                10%             17.5
+                                                5%              17.0
+                                                1%              17.0
+                                                0% Min          17.0
+
+                                                  Extreme Observations         
+
+                                               Lowest             Highest
+                                            Value       Obs     Value       Obs
+                                         --------  --------  --------  --------
+                                               17         5        26         3
+                                               18         7        37         6
+                                               18         1        41         2
+                                               23         9        60         4
+                                               24        10        65         8
+
+
+                                                   The Jenner System               16:55 Friday, November 27, 2026     4
+
+                                                   The FREQ Procedure
+
+                                              Table of X2_high by diabetes
+
+                                          X2_high     diabetes
+
+                                          Frequency|
+                                          Percent  |
+                                          Row Pct  |
+                                          Col Pct  |       0|       1|  Total
+                                          ---------+--------+--------+
+                                                 0 |      5 |      0 |      5
+                                                   |  50.00 |   0.00 |  50.00
+                                                   | 100.00 |   0.00 |
+                                                   |  83.33 |   0.00 |
+                                          ---------+--------+--------+
+                                                 1 |      1 |      4 |      5
+                                                   |  10.00 |  40.00 |  50.00
+                                                   |  20.00 |  80.00 |
+                                                   |  16.67 | 100.00 |
+                                          ---------+--------+--------+
+                                          Total           6        4       10
+                                                      60.00    40.00   100.00
+
+
+                                                   The Jenner System               16:55 Friday, November 27, 2026     5
+
+                                                 The CONTENTS Procedure
+
+                          Data Set Name        WORK.QUIZ1             Observations          10
+                          Member Type          DATA                   Variables             11
+                          Engine               PARQUET                Indexes               0
+                          Created              11/27/2026 16:55:07    Deleted Observations  0
+                          Last Modified        11/27/2026 16:55:07    Compressed            NO
+                          Protection                                  Sorted                NO
+                          Data Set Type
+                          Label
+                          Encoding             utf-8  Unicode (UTF-8)
+
+
+                                           Engine/Host Dependent Information
+
+Filename           /tmp/work/r_992890bc5f5a4823800a740e205855cf/work/688fc3c9-0989-4cd5-aeae-e6ce37dddc27/quiz1.parquet
+Inode Number       2682937
+Access Permission  rw-r--r--
+File Size (bytes)  7293
+
+
+                                      Alphabetic List of Variables and Attributes
+
+                                        #    Variable      Type    Len    Format
+
+                                        6    Consult_dt    Num       8    DATE9.
+                                        5    diabetes      Num       8
+                                        1    ID            Num       8
+                                        8    sum_V1        Num       8
+                                        9    sum_V2        Num       8
+                                        7    Surgery_dt    Num       8    DATE9.
+                                       10    wait_time     Num       8
+                                        2    X1            Num       8
+                                        3    X2            Num       8
+                                        4    X3            Num       8
+                                       11    X2_high       Num       8
+
